@@ -1,0 +1,105 @@
+{
+    "title": " ",
+    "Benefits": " ",
+    "Eligibility": {
+        "Description": " ",
+        "minage": " ",
+        "maxage": " "
+     },
+     "Application Process":  " ",
+     "Timeline": " " ,
+     "Scheme Application Link" :  " "
+}
+
+// router.post('/',async (req,res) => {
+//     console.log(req.body);
+//     const { error } = validatePlan(req.body);
+//     if(error) return res.status(404).send(error.details[0].message);
+//     const plan = new PlanModel({
+//         title : req.body.title,
+//         benefits : req.body.benefits,
+//         eligibility: {
+//             description: req.body.eligibility.description,
+//             minage: req.body.eligibility.minage,
+//             maxage: req.body.eligibility.maxage,
+//         },
+//         applicationprocess : req.body.applicationprocess,
+//         timeline : req.body.timeline,
+//         schemeapplicationlink : req.body.schemeapplicationlink
+//     });
+//     console.log(req.body);
+//     try{
+//         // const result = await course.validate()
+//         const result = await plan.save();
+//         res.send(plan);
+//     }
+//     catch(ex){
+//         for(field in ex.errors){
+//             res.send(ex.errors[field].message);
+//         }
+//     }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {
+        title:``,
+        desc: ``,
+        link:` `
+    },,
+    {
+        title:``,
+        desc: ``,
+        link:` `
+    },
+    {
+        title:``,
+        desc: ``,
+        link:` `
+    },
+    {
+        title:``,
+        desc: ``,
+        link:` `
+    },
+    {
+        title:``,
+        desc: ``,
+        link:` `
+    },
+    {
+        title:``,
+        desc: ``,
+        link:` `
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
