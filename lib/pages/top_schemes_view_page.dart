@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 class TopSchemesViewPage extends StatefulWidget {
   final data;
   TopSchemesViewPage(this.data);
@@ -21,21 +20,44 @@ class _TopSchemesViewPageState extends State<TopSchemesViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Top Schemes'),),
+      appBar: AppBar(title: Text(" "),toolbarHeight: 0.0,),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.fromLTRB(18.0,7.0,18.0,18.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(widget.data["title"],
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0
-              ),),
+              Row(
+                children: [
+                  SizedBox(width: 10.0,),
+                  Expanded(
+                    flex:0,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Icon(
+                        Icons.arrow_back_outlined,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10.0,),
+                  Expanded(
+                    flex:2,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0,3.0,8.0,8.0),
+                      child: Text(widget.data["title"],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17.5,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 18.0,),
-              Text('Benefits:',
-                style: TextStyle(
+              Text('Benefits:', style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0
                 ),),
@@ -52,8 +74,7 @@ class _TopSchemesViewPageState extends State<TopSchemesViewPage> {
                     fontSize: 18.0
                 ),),
               SizedBox(height: 10.0,),
-              Text('\t\t\t Description:',
-                style: TextStyle(
+              Text('\t\t\t Description:', style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0
                 ),),
@@ -93,8 +114,7 @@ class _TopSchemesViewPageState extends State<TopSchemesViewPage> {
                 ),
               ),
               SizedBox(height: 10.0,),
-              Text('Timeline:',
-                style: TextStyle(
+              Text('Timeline:', style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0
                 ),),
@@ -154,13 +174,8 @@ class _TopSchemesViewPageState extends State<TopSchemesViewPage> {
                       },
                     ),
                   ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+                ),)
+            ],),),),);
   }
 }
 

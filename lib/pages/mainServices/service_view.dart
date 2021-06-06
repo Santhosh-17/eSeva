@@ -1,9 +1,7 @@
-import 'package:e_seva/services/api_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_html/style.dart';
-
 class ServiceView extends StatefulWidget {
   final dataValue;
   ServiceView(this.dataValue);
@@ -24,9 +22,7 @@ class _ServiceViewState extends State<ServiceView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Basic Citizen Service"),
-      ),
+      appBar: AppBar(title: Text(" "),toolbarHeight: 1.0,),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -34,17 +30,47 @@ class _ServiceViewState extends State<ServiceView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(widget.dataValue["title"],
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                Row(
+                  children: [
+                    SizedBox(width: 10.0,),
+                    Expanded(
+                      flex:0,
+                      child: InkWell(
+                        onTap:  () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Icon(
+                          Icons.arrow_back_outlined,
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(width: 10.0,),
+                    Expanded(
+                      flex:2,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(8.0,3.0,8.0,8.0),
+                        child: Text(widget.dataValue["title"],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Html(
                   data: widget.dataValue["desc"],
+                  style: {
+                    "p": Style(
+                      textAlign: TextAlign.justify,
+                      lineHeight: LineHeight.number(1.3),
+                    ),
+                    "li": Style(
+                      textAlign: TextAlign.justify,
+                      lineHeight: LineHeight.number(1.3),
+                    )
+                  },
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -98,10 +124,10 @@ class _ServiceViewState extends State<ServiceView> {
                   ),
                 )
               ],
-            ),
-          ),
-        ),
-      ),
+            ),),),),
     );
   }
 }
+
+
+

@@ -24,9 +24,7 @@ class _SchemeViewState extends State<SchemeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("State Scheme"),
-      ),
+      appBar: AppBar(title: Text(" "),toolbarHeight: 0.0,),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -34,17 +32,47 @@ class _SchemeViewState extends State<SchemeView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(widget.dataValue["title"],
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                Row(
+                  children: [
+                    SizedBox(width: 10.0,),
+                    Expanded(
+                      flex:0,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Icon(
+                          Icons.arrow_back_outlined,
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(width: 10.0,),
+                    Expanded(
+                      flex:2,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(8.0,3.0,8.0,8.0),
+                        child: Text(widget.dataValue["title"],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Html(
                   data: widget.dataValue["desc"],
+                  style: {
+                    "p": Style(
+                      textAlign: TextAlign.justify,
+                      lineHeight: LineHeight.number(1.3),
+                    ),
+                    "li": Style(
+                      textAlign: TextAlign.justify,
+                      lineHeight: LineHeight.number(1.3),
+                    )
+                  },
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),

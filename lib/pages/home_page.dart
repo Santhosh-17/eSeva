@@ -3,9 +3,7 @@ import 'package:e_seva/pages/mainSchemes/scheme_list.dart';
 import 'package:e_seva/pages/mainServices/services_list.dart';
 import 'package:e_seva/pages/reusable_widget.dart';
 import 'package:flutter/material.dart';
-
 import 'input_content.dart';
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -53,12 +51,10 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             flex: 4,
-            child: HomeGrid(),
-          )
+            child: HomeGrid(),)
         ],
-      ),
-    );
+      ),);
   }
 }
 
-//color: Color(0xFF8D8E98),
+//color: Color(0SxFF8D8E98),
